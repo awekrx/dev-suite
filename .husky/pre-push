@@ -1,0 +1,19 @@
+send_notification() {
+  local title="$1"
+  local message="$2"
+  
+  if command -v terminal-notifier >/dev/null 2>&1; then
+    terminal-notifier -title "$title" -message "$message" -sound default
+  fi
+}
+
+
+# Run linting and store output
+yarn lint || (send_notification "Git Pre-Push Hook" "Linting failed! Check your code." && exit 1)
+
+echo Pre-push hook ran successfully
+
+if command -v terminal-notifier >/dev/null 2>&1; then
+  send_notification "Git Pre-Push Hook" "Pre-push checks completed successfully"
+fi
+

@@ -1,0 +1,20 @@
+ignorePaths:
+  - dist/**
+  - node_modules/**
+  - .yarn/**
+  - coverage/**
+  - cspell.yml
+words:
+  - bivariance
+  - dpage
+  - healthcheck
+  - isready
+  - oxlint
+  - oxfmt
+  - tsgolint
+  - pgadmin
+  - oxlintrc
+  - oxfmtrc
+  - rediscommander
+  - overengineering
+  - Debounceable

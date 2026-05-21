@@ -1,0 +1,56 @@
+{
+  "name": "dev-suite",
+  "version": "0.0.1",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "lint": "yarn workspace @dev-suite/decorators lint",
+    "lint:deps": "npx -y npm-package-json-lint@9.0.0 ./package.json",
+    "lint:eslint": "eslint --fix --ignore-pattern '**/dist/**'",
+    "lint:spell": "npx -y cspell@9.4.0 . --gitignore --quiet",
+    "lint:oxlint": "oxlint --disable-nested-config --fix",
+    "build:decorators": "yarn workspace @dev-suite/decorators build",
+    "test:decorators": "yarn workspace @dev-suite/decorators test",
+    "test:decorators:watch": "yarn workspace @dev-suite/decorators test --watch",
+    "test:decorators:cov": "yarn workspace @dev-suite/decorators test --coverage",
+    "test:decorators:imports": "jest -c jest.config.ts",
+    "publish:decorators:patch": "yarn workspace @dev-suite/decorators run publish:patch"
+  },
+  "devDependencies": {
+    "@types/jest": "30.0.0",
+    "@types/node": "25.0.3",
+    "@types/supertest": "2.0.16",
+    "@typescript-eslint/eslint-plugin": "7.5.0",
+    "@typescript-eslint/parser": "7.5.0",
+    "concurrently": "9.2.1",
+    "eslint": "8.57.1",
+    "eslint-config-airbnb": "19.0.4",
+    "eslint-config-airbnb-typescript": "18.0.0",
+    "eslint-plugin-eslint-comments": "3.2.0",
+    "eslint-plugin-import": "2.32.0",
+    "eslint-plugin-simple-import-sort": "12.1.1",
+    "eslint-plugin-typescript-sort-keys": "3.3.0",
+    "jest": "30.2.0",
+    "lint-staged": "16.2.7",
+    "oxfmt": "0.39.0",
+    "oxlint": "1.54.0",
+    "oxlint-tsgolint": "0.16.0",
+    "react-is": "18.3.1",
+    "rimraf": "3.0.2",
+    "source-map-support": "0.5.21",
+    "supertest": "6.3.4",
+    "ts-jest": "29.4.6",
+    "ts-loader": "9.5.4",
+    "ts-node": "10.9.2",
+    "tsconfig-paths": "4.2.0",
+    "tsup": "8.5.0",
+    "typescript": "5.9.3",
+    "utility-types": "3.11.0"
+  },
+  "engines": {
+    "node": ">=24.12.0"
+  },
+  "packageManager": "yarn@4.12.0"
+}

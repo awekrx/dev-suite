@@ -1,0 +1,200 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "options": {
+    "typeAware": false,
+    "typeCheck": false
+  },
+  "settings": {
+    "jsx-a11y": {
+      "polymorphicPropName": null,
+      "components": {},
+      "attributes": {}
+    },
+    "next": {
+      "rootDir": []
+    },
+    "react": {
+      "formComponents": [],
+      "linkComponents": [],
+      "version": null
+    },
+    "jsdoc": {
+      "ignorePrivate": false,
+      "ignoreInternal": false,
+      "ignoreReplacesDocs": true,
+      "overrideReplacesDocs": true,
+      "augmentsExtendsReplacesDocs": false,
+      "implementsReplacesDocs": false,
+      "exemptDestructuredRootsFromChecks": false,
+      "tagNamePreference": {}
+    },
+    "vitest": {
+      "typecheck": false
+    }
+  },
+  "plugins": ["typescript", "import"],
+  "categories": {
+    "correctness": "error"
+  },
+  "env": {
+    "builtin": true
+  },
+  "rules": {
+    "curly": ["error", "all"],
+    "prefer-destructuring": [
+      "error",
+      {
+        "VariableDeclarator": {
+          "array": true,
+          "object": true
+        },
+        "AssignmentExpression": {
+          "array": false,
+          "object": false
+        }
+      }
+    ],
+    "default-case": "error",
+    "func-names": [
+      "error",
+      "always",
+      {
+        "generators": "never"
+      }
+    ],
+    "no-void": [
+      "error",
+      {
+        "allowAsStatement": true
+      }
+    ],
+    "no-unused-expressions": ["error"],
+    "no-empty-function": [
+      "error",
+      {
+        "allow": ["constructors"]
+      }
+    ],
+    "no-dupe-keys": "error",
+    "no-console": "off",
+    "no-unreachable": "error",
+    "no-unused-labels": "error",
+    "no-fallthrough": "error",
+    "no-magic-numbers": "off",
+    "yoda": "error",
+    "eslint/no-useless-constructor": "error",
+    "eslint/max-classes-per-file": "off",
+    "eslint/no-unmodified-loop-condition": "error",
+    "eslint/no-shadow": "error",
+    "typescript/no-floating-promises": "error",
+    "typescript/no-unsafe-assignment": "error",
+    "typescript/no-unsafe-member-access": "error",
+    "typescript/no-var-requires": "error",
+    "typescript/require-await": "error",
+    "typescript/no-unsafe-argument": "error",
+    "typescript/no-unsafe-call": "error",
+    "typescript/no-redundant-type-constituents": "error",
+    "typescript/no-unsafe-return": "error",
+    "typescript/no-misused-promises": [
+      "error",
+      {
+        "checksVoidReturn": false
+      }
+    ],
+    "typescript/no-explicit-any": "off",
+    "typescript/explicit-module-boundary-types": "off",
+    "typescript/explicit-function-return-type": "off",
+    "typescript/no-namespace": "error",
+    "typescript/no-unnecessary-type-assertion": "error",
+    "typescript/no-unnecessary-type-constraint": "off",
+    "typescript/no-unsafe-enum-comparison": "error",
+    "typescript/ban-ts-comment": "error",
+    "typescript/ban-types": "off", // @deprecated - replaced with no-empty-object-type, no-unsafe-function-type, no-wrapper-object-types, no-restricted-types
+    "typescript/no-empty-object-type": "error",
+    "typescript/no-unsafe-function-type": "error",
+    "typescript/no-wrapper-object-types": "error",
+    "typescript/no-restricted-types": "error", // Could be used to ban custom types usage
+    "typescript/restrict-plus-operands": "error",
+    "typescript/return-await": "error",
+    "typescript/consistent-type-assertions": "error",
+    "typescript/class-literal-property-style": "error",
+    "typescript/no-invalid-void-type": "error",
+    "typescript/no-use-before-define": "off",
+    "typescript/no-unnecessary-condition": "error",
+    "typescript/dot-notation": [
+      "error",
+      {
+        "allowKeywords": true,
+        "allowPattern": "",
+        "allowPrivateClassPropertyAccess": false,
+        "allowProtectedClassPropertyAccess": false,
+        "allowIndexSignaturePropertyAccess": false
+      }
+    ],
+    "typescript/no-useless-default-assignment": "error",
+    "typescript/prefer-string-starts-ends-with": "error",
+    "typescript/prefer-readonly": "error",
+    "typescript/no-unnecessary-qualifier": "error",
+    "typescript/prefer-find": "error",
+    "typescript/no-unnecessary-type-conversion": "error",
+    "typescript/no-this-alias": "off",
+    "no-duplicate-imports": "error",
+    "import/no-cycle": "error",
+    "import/no-extraneous-dependencies": "warn", // Disable it for monorepo
+    "import/prefer-default-export": "off", // We use only named exports in the project
+    "import/extensions": ["error", "never"],
+    "import/export": "error",
+    "import/no-named-as-default": "error",
+    "import/no-mutable-exports": "error",
+    "import/no-amd": "error",
+    "import/first": "error",
+    "import/no-duplicates": "error",
+    "import/order": "off", // We are using simple-import-sort
+    "import/newline-after-import": "error",
+    "import/no-absolute-path": "error",
+    "import/no-dynamic-require": "error",
+    "import/no-webpack-loader-syntax": "error",
+    "import/no-named-default": "error",
+    "import/no-self-import": "error",
+    "import/no-useless-path-segments": "error",
+    "import/no-import-module-exports": "error",
+    "import/no-relative-packages": "error",
+    "simple-import-sort/imports": [
+      "error",
+      {
+        "groups": [["^(@?\\w|\\w)"], ["^@dev-suite\\/"], ["^\\$"], ["^\\./"]]
+      }
+    ],
+    "no-restricted-imports": "off",
+    "no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_",
+        "destructuredArrayIgnorePattern": "^_"
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["**/*.spec.ts"],
+      "rules": {
+        "import/first": "off",
+        "typescript/unbound-method": "off"
+      }
+    },
+    {
+      "files": ["./src/**/**/entities/*.ts", "./src/**/**/entity.ts"],
+      "rules": {
+        "import/no-cycle": "off"
+      }
+    },
+    {
+      "files": ["./src/**/**/constants/*.ts", "./src/**/**/constants.ts"],
+      "rules": {
+        "no-magic-numbers": "off"
+      }
+    }
+  ],
+  "jsPlugins": ["eslint-plugin-simple-import-sort"],
+  "ignorePatterns": [".eslintrc.js"]
+}

@@ -1,0 +1,63 @@
+{
+  "compilerOptions": {
+    /* ============================
+     *  Core compilation settings
+     * ============================ */
+    "target": "es2017", // Output JavaScript version
+    "module": "commonjs", // Module system used by Node.js
+    "moduleResolution": "node", // Resolve modules using Node.js rules
+
+    /* ============================
+     *  Interop & module behavior
+     * ============================ */
+    "esModuleInterop": true, // Enable default imports from CommonJS modules
+    "allowSyntheticDefaultImports": true, // Allow `import x from 'cjs-lib'` syntax
+    "downlevelIteration": false, // Not needed for ES2015+ (native iterators)
+
+    /* ============================
+     *  Project hygiene
+     * ============================ */
+    "forceConsistentCasingInFileNames": true, // Enforce consistent import casing
+    "declaration": false, // Emit .d.ts files (enable for libraries)
+    "sourceMap": false, // Generate source maps (enable for debugging)
+    "allowJs": false, // Disallow JavaScript files
+    "checkJs": false, // Disable JS type checking
+    "resolveJsonModule": true, // Allow importing JSON files
+    "removeComments": true, // Strip comments from output
+    "incremental": false, // Enable incremental compilation
+    "skipLibCheck": true, // Skip type checking of declaration files
+
+    /* ============================
+     *  Decorators support
+     * ============================ */
+    "emitDecoratorMetadata": true, // Emit metadata for decorators (requires reflect-metadata)
+    "experimentalDecorators": true, // Enable experimental decorator support
+
+    /* ============================
+     *  Strictness & type safety
+     * ============================ */
+    "alwaysStrict": true, // Emit 'use strict' in generated JS
+    "strictNullChecks": true, // Distinguish null/undefined from other types
+    "strictBindCallApply": true, // Strict checking for bind/call/apply
+    "strictBuiltinIteratorReturn": true, // Built-in iterators return `undefined` instead of `any`
+    "strictFunctionTypes": true, // Enforce function parameter bivariance rules
+    "strictPropertyInitialization": true, // Require class properties to be initialized
+    "noImplicitAny": true, // Disallow implicit `any`
+    "noImplicitThis": true, // Disallow implicit `this`
+    "useUnknownInCatchVariables": true, // Use `unknown` instead of `any` in catch blocks
+
+    "noPropertyAccessFromIndexSignature": true, // Prevent dot-access on index signatures
+    "noUncheckedIndexedAccess": true, // Add `undefined` to indexed access results
+
+    /* ============================
+     *  Control flow & lint-like checks
+     * ============================ */
+    "noImplicitReturns": true, // Keep here, as recommended
+    "noFallthroughCasesInSwitch": false, // Moved to oxlint rules
+    "noUnusedLocals": false, // Moved to oxlint rules
+    "noUnusedParameters": false, // Moved to oxlint rules
+    "allowUnreachableCode": true, // Moved to oxlint rules
+    "allowUnusedLabels": true // Moved to oxlint rules
+  },
+  "include": ["src/**/*"]
+}

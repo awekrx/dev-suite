@@ -1,0 +1,229 @@
+{
+  "name": "@dev-suite/decorators",
+  "version": "0.1.0",
+  "description": "Collection of reusable TypeScript decorators for classes and methods",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json",
+    "./*": {
+      "types": "./dist/*.d.ts",
+      "default": "./dist/*.js"
+    },
+    "./auto-bind-methods": {
+      "types": "./dist/decorators/class/auto-bind-methods/index.d.ts",
+      "default": "./dist/decorators/class/auto-bind-methods/index.js"
+    },
+    "./cache": {
+      "types": "./dist/decorators/method/cache/index.d.ts",
+      "default": "./dist/decorators/method/cache/index.js"
+    },
+    "./clamp-param": {
+      "types": "./dist/decorators/parameter/clamp-param/index.d.ts",
+      "default": "./dist/decorators/parameter/clamp-param/index.js"
+    },
+    "./class-metadata": {
+      "types": "./dist/decorators/class/class-metadata/index.d.ts",
+      "default": "./dist/decorators/class/class-metadata/index.js"
+    },
+    "./class-trace": {
+      "types": "./dist/decorators/class/class-trace/index.d.ts",
+      "default": "./dist/decorators/class/class-trace/index.js"
+    },
+    "./coerce": {
+      "types": "./dist/decorators/parameter/coerce/index.d.ts",
+      "default": "./dist/decorators/parameter/coerce/index.js"
+    },
+    "./construct-metrics": {
+      "types": "./dist/decorators/class/construct-metrics/index.d.ts",
+      "default": "./dist/decorators/class/construct-metrics/index.js"
+    },
+    "./debounce": {
+      "types": "./dist/decorators/method/debounce/index.d.ts",
+      "default": "./dist/decorators/method/debounce/index.js"
+    },
+    "./debug-fn-args": {
+      "types": "./dist/decorators/method/debug/debug-fn-args/index.d.ts",
+      "default": "./dist/decorators/method/debug/debug-fn-args/index.js"
+    },
+    "./debug-fn-response": {
+      "types": "./dist/decorators/method/debug/debug-fn-response/index.d.ts",
+      "default": "./dist/decorators/method/debug/debug-fn-response/index.js"
+    },
+    "./dedupe": {
+      "types": "./dist/decorators/method/dedupe/index.d.ts",
+      "default": "./dist/decorators/method/dedupe/index.js"
+    },
+    "./default-param": {
+      "types": "./dist/decorators/parameter/default-param/index.d.ts",
+      "default": "./dist/decorators/parameter/default-param/index.js"
+    },
+    "./default-value": {
+      "types": "./dist/decorators/property/default-value/index.d.ts",
+      "default": "./dist/decorators/property/default-value/index.js"
+    },
+    "./email-param": {
+      "types": "./dist/decorators/parameter/email-param/index.d.ts",
+      "default": "./dist/decorators/parameter/email-param/index.js"
+    },
+    "./enum-param": {
+      "types": "./dist/decorators/parameter/enum-param/index.d.ts",
+      "default": "./dist/decorators/parameter/enum-param/index.js"
+    },
+    "./fallback": {
+      "types": "./dist/decorators/method/fallback/index.d.ts",
+      "default": "./dist/decorators/method/fallback/index.js"
+    },
+    "./feature-gate": {
+      "types": "./dist/decorators/class/feature-gate/index.d.ts",
+      "default": "./dist/decorators/class/feature-gate/index.js"
+    },
+    "./from-json": {
+      "types": "./dist/decorators/parameter/from-json/index.d.ts",
+      "default": "./dist/decorators/parameter/from-json/index.js"
+    },
+    "./idempotent": {
+      "types": "./dist/decorators/method/idempotent/index.d.ts",
+      "default": "./dist/decorators/method/idempotent/index.js"
+    },
+    "./inject-config": {
+      "types": "./dist/decorators/class/inject-config/index.d.ts",
+      "default": "./dist/decorators/class/inject-config/index.js"
+    },
+    "./instance-limit": {
+      "types": "./dist/decorators/class/instance-limit/index.d.ts",
+      "default": "./dist/decorators/class/instance-limit/index.js"
+    },
+    "./lifecycle-hooks": {
+      "types": "./dist/decorators/class/lifecycle-hooks/index.d.ts",
+      "default": "./dist/decorators/class/lifecycle-hooks/index.js"
+    },
+    "./lock": {
+      "types": "./dist/decorators/method/lock/index.d.ts",
+      "default": "./dist/decorators/method/lock/index.js"
+    },
+    "./lowercase": {
+      "types": "./dist/decorators/parameter/lowercase/index.d.ts",
+      "default": "./dist/decorators/parameter/lowercase/index.js"
+    },
+    "./mask-sensitive": {
+      "types": "./dist/decorators/parameter/mask-sensitive/index.d.ts",
+      "default": "./dist/decorators/parameter/mask-sensitive/index.js"
+    },
+    "./memoized-computed": {
+      "types": "./dist/decorators/property/memoized-computed/index.d.ts",
+      "default": "./dist/decorators/property/memoized-computed/index.js"
+    },
+    "./metrics": {
+      "types": "./dist/decorators/method/metrics/index.d.ts",
+      "default": "./dist/decorators/method/metrics/index.js"
+    },
+    "./observable": {
+      "types": "./dist/decorators/property/observable/index.d.ts",
+      "default": "./dist/decorators/property/observable/index.js"
+    },
+    "./persist": {
+      "types": "./dist/decorators/property/persist/index.d.ts",
+      "default": "./dist/decorators/property/persist/index.js"
+    },
+    "./range-param": {
+      "types": "./dist/decorators/parameter/range-param/index.d.ts",
+      "default": "./dist/decorators/parameter/range-param/index.js"
+    },
+    "./rate-limit": {
+      "types": "./dist/decorators/method/rate-limit/index.d.ts",
+      "default": "./dist/decorators/method/rate-limit/index.js"
+    },
+    "./required-param": {
+      "types": "./dist/decorators/parameter/required-param/index.d.ts",
+      "default": "./dist/decorators/parameter/required-param/index.js"
+    },
+    "./retry": {
+      "types": "./dist/decorators/method/retry/index.d.ts",
+      "default": "./dist/decorators/method/retry/index.js"
+    },
+    "./sanitize": {
+      "types": "./dist/decorators/parameter/sanitize/index.d.ts",
+      "default": "./dist/decorators/parameter/sanitize/index.js"
+    },
+    "./serialize": {
+      "types": "./dist/decorators/method/serialize/index.d.ts",
+      "default": "./dist/decorators/method/serialize/index.js"
+    },
+    "./singleton": {
+      "types": "./dist/decorators/class/singleton/index.d.ts",
+      "default": "./dist/decorators/class/singleton/index.js"
+    },
+    "./split-csv": {
+      "types": "./dist/decorators/parameter/split-csv/index.d.ts",
+      "default": "./dist/decorators/parameter/split-csv/index.js"
+    },
+    "./timeout": {
+      "types": "./dist/decorators/method/timeout/index.d.ts",
+      "default": "./dist/decorators/method/timeout/index.js"
+    },
+    "./trace": {
+      "types": "./dist/decorators/method/trace/index.d.ts",
+      "default": "./dist/decorators/method/trace/index.js"
+    },
+    "./transform": {
+      "types": "./dist/decorators/property/transform/index.d.ts",
+      "default": "./dist/decorators/property/transform/index.js"
+    },
+    "./trim": {
+      "types": "./dist/decorators/parameter/trim/index.d.ts",
+      "default": "./dist/decorators/parameter/trim/index.js"
+    },
+    "./uppercase": {
+      "types": "./dist/decorators/parameter/uppercase/index.d.ts",
+      "default": "./dist/decorators/parameter/uppercase/index.js"
+    },
+    "./uuid-param": {
+      "types": "./dist/decorators/parameter/uuid-param/index.d.ts",
+      "default": "./dist/decorators/parameter/uuid-param/index.js"
+    },
+    "./validate": {
+      "types": "./dist/decorators/property/validate/index.d.ts",
+      "default": "./dist/decorators/property/validate/index.js"
+    },
+    "./validate-args": {
+      "types": "./dist/decorators/method/validate-args/index.d.ts",
+      "default": "./dist/decorators/method/validate-args/index.js"
+    },
+    "./validate-schema": {
+      "types": "./dist/decorators/parameter/validate-schema/index.d.ts",
+      "default": "./dist/decorators/parameter/validate-schema/index.js"
+    }
+  },
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "node scripts/build.mjs",
+    "sync-exports": "node scripts/sync-decorators.mjs",
+    "test": "jest -c jest.config.ts",
+    "lint": "concurrently --prefixColors auto --group --names \"eslint,deps,types,spell,oxlint\" --prefix \"[{name}]\" \"yarn lint:eslint\" \"yarn lint:deps\" \"yarn lint:types\" \"yarn lint:spell\" \"yarn lint:oxlint\"",
+    "format": "oxfmt",
+    "lint:eslint": "eslint \"src/**/*.ts\" --fix",
+    "lint:deps": "npx -y npm-package-json-lint@9.0.0 ./package.json",
+    "lint:types": "tsc --noEmit -p tsconfig.json",
+    "lint:spell": "npx -y cspell@9.4.0 . --gitignore --quiet",
+    "lint:oxlint": "oxlint --disable-nested-config --fix",
+    "publish:patch": "npm version patch && npm publish --access public"
+  },
+  "dependencies": {
+    "picocolors": "1.1.1",
+    "utility-types": "3.11.0",
+    "zod": "3.24.1"
+  },
+  "engines": {
+    "node": ">=18.18.0"
+  },
+  "packageManager": "yarn@4.12.0"
+}

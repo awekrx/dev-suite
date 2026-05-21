@@ -1,0 +1,5 @@
+{
+  "*": ["oxfmt --no-error-on-unmatched-pattern", "yarn lint:spell --no-must-find-files --files"],
+  "*.{js,jsx,ts,tsx,mjs,cjs}": ["yarn lint:oxlint", "yarn lint:eslint"],
+  "package.json": "yarn lint:deps"
+}

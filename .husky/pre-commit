@@ -1,0 +1,3 @@
+yarn lint-staged
+
+echo Pre-commit hook ran successfully
