@@ -201,6 +201,22 @@
     "./validate-schema": {
       "types": "./dist/decorators/parameter/validate-schema/index.d.ts",
       "default": "./dist/decorators/parameter/validate-schema/index.js"
+    },
+    "./createClassDecorator": {
+      "types": "./dist/core/decorators/class/index.d.ts",
+      "default": "./dist/core/decorators/class/index.js"
+    },
+    "./createMethodDecorator": {
+      "types": "./dist/core/decorators/method/index.d.ts",
+      "default": "./dist/core/decorators/method/index.js"
+    },
+    "./createParameterDecorator": {
+      "types": "./dist/core/decorators/parameter/index.d.ts",
+      "default": "./dist/core/decorators/parameter/index.js"
+    },
+    "./createPropertyDecorator": {
+      "types": "./dist/core/decorators/property/index.d.ts",
+      "default": "./dist/core/decorators/property/index.js"
     }
   },
   "scripts": {

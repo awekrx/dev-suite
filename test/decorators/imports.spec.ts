@@ -1,3 +1,5 @@
+import { createRequire } from 'node:module';
+
 import {
   cache,
   clampParam,
@@ -44,7 +46,6 @@ import {
   validateArgs,
   validateSchema,
 } from '@dev-suite/decorators';
-import { createRequire } from 'node:module';
 
 const requireModule = createRequire(__filename);
 
@@ -56,6 +57,16 @@ const subpathExports: Array<[Record<string, unknown>, string]> = [
   [requireModule('@dev-suite/decorators/class-trace') as Record<string, unknown>, 'classTrace'],
   [requireModule('@dev-suite/decorators/coerce') as Record<string, unknown>, 'coerce'],
   [requireModule('@dev-suite/decorators/construct-metrics') as Record<string, unknown>, 'constructMetrics'],
+  [requireModule('@dev-suite/decorators/createClassDecorator') as Record<string, unknown>, 'createClassDecorator'],
+  [requireModule('@dev-suite/decorators/createMethodDecorator') as Record<string, unknown>, 'createMethodDecorator'],
+  [
+    requireModule('@dev-suite/decorators/createParameterDecorator') as Record<string, unknown>,
+    'createParameterDecorator',
+  ],
+  [
+    requireModule('@dev-suite/decorators/createPropertyDecorator') as Record<string, unknown>,
+    'createPropertyDecorator',
+  ],
   [requireModule('@dev-suite/decorators/default-param') as Record<string, unknown>, 'defaultParam'],
   [requireModule('@dev-suite/decorators/debounce') as Record<string, unknown>, 'debounce'],
   [requireModule('@dev-suite/decorators/dedupe') as Record<string, unknown>, 'dedupe'],
