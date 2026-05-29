@@ -15,7 +15,7 @@ const run = (command, args, env = process.env) => {
 };
 
 run('node', ['scripts/sync-decorators.mjs']);
-run('yarn', ['clean']);
+fs.rmSync(path.join(rootDir, 'dist'), { recursive: true, force: true });
 
 const manifest = JSON.parse(fs.readFileSync(entriesManifestPath, 'utf8'));
 const { entries } = manifest;
