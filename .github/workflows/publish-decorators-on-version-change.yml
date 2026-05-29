@@ -1,0 +1,68 @@
+name: Publish decorators on version change
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'packages/decorators/package.json'
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Check version changed
+        id: version_check
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          OLD_VERSION=""
+          if git rev-parse --verify HEAD^ >/dev/null 2>&1; then
+            OLD_VERSION=$(git show HEAD^:packages/decorators/package.json | node -e "let d='';process.stdin.on('data',c=>d+=c);process.stdin.on('end',()=>process.stdout.write(JSON.parse(d).version));")
+          fi
+
+          NEW_VERSION=$(node -p "require('./packages/decorators/package.json').version")
+
+          echo "old=$OLD_VERSION" >> "$GITHUB_OUTPUT"
+          echo "new=$NEW_VERSION" >> "$GITHUB_OUTPUT"
+
+          if [ -z "$OLD_VERSION" ] || [ "$OLD_VERSION" != "$NEW_VERSION" ]; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Setup Node
+        if: steps.version_check.outputs.changed == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+          cache: yarn
+
+      - name: Enable Corepack
+        if: steps.version_check.outputs.changed == 'true'
+        run: corepack enable
+
+      - name: Install dependencies
+        if: steps.version_check.outputs.changed == 'true'
+        run: yarn install --immutable
+
+      - name: Build decorators
+        if: steps.version_check.outputs.changed == 'true'
+        run: yarn workspace @dev-suite/decorators build
+
+      - name: Publish decorators
+        if: steps.version_check.outputs.changed == 'true'
+        run: npm publish --workspace @dev-suite/decorators --access public
