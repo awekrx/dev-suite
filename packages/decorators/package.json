@@ -2,7 +2,24 @@
   "name": "@dev-suite/decorators",
   "version": "0.1.1",
   "description": "Collection of reusable TypeScript decorators for classes and methods",
+  "keywords": [
+    "class-decorators",
+    "decorators",
+    "method-decorators",
+    "parameter-decorators",
+    "property-decorators",
+    "typescript",
+    "utilities"
+  ],
+  "homepage": "https://github.com/awekrx/dev-suite",
+  "bugs": {
+    "url": "https://github.com/awekrx/dev-suite/issues"
+  },
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/awekrx/dev-suite"
+  },
   "files": [
     "dist"
   ],
